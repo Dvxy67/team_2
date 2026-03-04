@@ -445,7 +445,7 @@ body {
 }
 
 .footer-logo {
-    height: 60px;
+    height: 40px;
     width: auto;
     margin-bottom: 24px;
 }
@@ -477,6 +477,7 @@ body {
     text-transform: uppercase;
     padding: 16px 0;
     transition: opacity 0.3s ease;
+    text-align: left;
 }
 
 .footer-links a:hover {
