@@ -1,0 +1,474 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --color-primary: #257579;
+    --color-secondary: #A0C4C2;
+    --color-text: #333333;
+    --color-text-light: #888888;
+    --color-bg: #DFDFDF;
+    --color-white: #F4F4F4;
+    --color-emergency: #FF0000;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background: white;
+    color: var(--color-text);
+    overflow-x: hidden;
+}
+
+.page-container {
+    margin: 0 auto;
+    position: relative;
+    background: white;
+    min-height: 100vh;
+}
+
+/* Navbar */
+.navbar {
+    background: var(--color-primary);
+    padding-top: 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.status-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 21px 16px 8px;
+    color: var(--color-white);
+}
+
+.time {
+    font-family: 'SF Pro', system-ui, sans-serif;
+    font-size: 17px;
+    font-weight: 590;
+}
+
+.dynamic-island {
+    width: 124px;
+    height: 10px;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 20px;
+}
+
+.status-icons {
+    display: flex;
+    gap: 7px;
+    align-items: center;
+}
+
+.status-icons svg {
+    width: 20px;
+    height: 13px;
+}
+
+.top-navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px 20px;
+}
+
+.logo svg {
+    height: 47px;
+    width: auto;
+}
+
+.menu-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.menu-btn svg {
+    width: 30px;
+    height: 30px;
+}
+
+/* Hero */
+.hero {
+    padding: 30px 20px;
+    text-align: center;
+}
+
+.hero h1 {
+    font-family: 'Avenir', sans-serif;
+    font-size: 32px;
+    font-weight: 900;
+    text-transform: capitalize;
+    margin-bottom: 8px;
+}
+
+.hero p {
+    font-size: 16px;
+    line-height: 1.5;
+    color: var(--color-text);
+}
+
+/* Cards */
+.cards {
+    padding: 0 18px 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.card {
+    background: var(--color-bg);
+    border-radius: 10px;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.card img {
+    width: 100%;
+    height: 140px;
+    object-fit: cover;
+    border-radius: 9px;
+}
+
+.card-content {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    text-align: center;
+}
+
+.card h3 {
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.card p {
+    font-size: 14px;
+    color: #353535;
+}
+
+.btn-primary {
+    background: var(--color-primary);
+    color: white;
+    border: none;
+    padding: 8px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: opacity 0.2s;
+}
+
+.btn-primary:hover {
+    opacity: 0.9;
+}
+
+/* Stepper - VERSION CORRIGÉE */
+.stepper {
+    padding: 40px 16px;
+}
+
+.stepper h2 {
+    font-family: 'Avenir', sans-serif;
+    font-size: 32px;
+    font-weight: 900;
+    text-align: center;
+    margin-bottom: 24px;
+    text-transform: capitalize;
+}
+
+.step {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 0;
+    position: relative;
+}
+
+/* Ligne verticale - fixée sur le conteneur .step */
+.step:not(:last-child)::before {
+    content: '';
+    position: absolute;
+    left: 25px;
+    /* Centre du cercle */
+    top: 50px;
+    /* Commence après le cercle */
+    width: 2px;
+    bottom: -28px;
+    /* Va jusqu'au prochain step */
+    background: var(--color-primary);
+    z-index: 0;
+}
+
+.step-number {
+    min-width: 50px;
+    height: 50px;
+    background: var(--color-primary);
+    color: white;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    position: relative;
+    flex-shrink: 0;
+    z-index: 1;
+    /* Au-dessus de la ligne */
+}
+
+.step-content {
+    flex: 1;
+    padding-bottom: 28px;
+}
+
+.step-content h3 {
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 2px;
+}
+
+.step-content p {
+    font-size: 16px;
+    color: var(--color-text-light);
+    line-height: 1.5;
+}
+
+/* Tarifs */
+.tarifs {
+    padding: 40px 23px;
+}
+
+.tarifs h2 {
+    font-family: 'Avenir', sans-serif;
+    font-size: 32px;
+    font-weight: 900;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.tarifs-subtitle {
+    text-align: center;
+    font-size: 16px;
+    margin-bottom: 28px;
+}
+
+.tarif-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.tarif-card {
+    background: white;
+    box-shadow: 0px 0.5px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+    padding: 10px 12px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    min-height: 83px;
+}
+
+.tarif-icon {
+    width: 66px;
+    height: 62px;
+    border: 2px solid var(--color-secondary);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.tarif-icon svg {
+    width: 30px;
+    height: 30px;
+}
+
+.tarif-content {
+    flex: 1;
+}
+
+.tarif-content h3 {
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 2px;
+}
+
+.tarif-label {
+    font-family: 'Poppins', sans-serif;
+    font-size: 11px;
+    font-weight: 300;
+}
+
+.tarif-price {
+    font-size: 16px;
+    font-weight: 500;
+    text-align: right;
+    min-width: 84px;
+}
+
+/* FAQ */
+.faq {
+    padding: 40px 20px;
+}
+
+.faq h2 {
+    font-size: 16px;
+    font-weight: 500;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.faq-items {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.faq-item {
+    background: var(--color-secondary);
+    border-radius: 4.91px;
+    box-shadow: 0px 24.56px 32.74px -14.73px rgba(148.75, 148.75, 148.75, 0.25);
+}
+
+.faq-item summary {
+    padding: 12px 16px;
+    cursor: pointer;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'Avenir', sans-serif;
+    font-size: 12px;
+    font-weight: 800;
+    color: #1B1139;
+}
+
+.faq-item summary::-webkit-details-marker {
+    display: none;
+}
+
+.faq-icon {
+    width: 10px;
+    height: 10px;
+    color: #1B1139;
+    transition: transform 0.2s;
+}
+
+.faq-item[open] .faq-icon {
+    transform: rotate(45deg);
+}
+
+.faq-content {
+    padding: 0 16px 12px;
+    font-size: 12px;
+    color: #1B1139;
+    opacity: 0.88;
+}
+
+.faq-cta {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.faq-cta p {
+    font-family: 'Avenir', sans-serif;
+    font-size: 12px;
+    font-weight: 800;
+    margin-bottom: 8px;
+}
+
+.faq-cta .btn-primary {
+    font-family: 'Avenir', sans-serif;
+    font-size: 12px;
+    font-weight: 800;
+    border-radius: 20px;
+}
+
+/* ===========================
+   FOOTER
+   =========================== */
+.main-footer {
+    background-color: #257579;
+    color: #FFFFFF;
+    padding: 20px 22px 30px;
+    text-align: center;
+}
+
+.footer-logo {
+    height: 40px;
+    width: auto;
+    margin-bottom: 24px;
+}
+
+.footer-links {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    margin-bottom: 60px;
+    max-width: 348px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.footer-divider {
+    width: 100%;
+    height: 1px;
+    background-color: rgba(255, 255, 255, 0.3);
+    margin: 0;
+}
+
+.footer-links a {
+    color: #FFFFFF;
+    text-decoration: none;
+    font-family: 'Inter', sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    letter-spacing: 2.52px;
+    text-transform: uppercase;
+    padding: 16px 0;
+    transition: opacity 0.3s ease;
+    text-align: left;
+}
+
+.footer-links a:hover {
+    opacity: 0.8;
+}
+
+.footer-contact {
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+    margin-bottom: 24px;
+}
+
+.footer-contact-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.3s ease;
+}
+
+.footer-contact-item:hover {
+    opacity: 0.8;
+}
+
+.footer-contact-item svg {
+    fill: #F4F4F4;
+}
+
+.footer-copyright {
+    font-family: 'Roboto', sans-serif;
+    font-size: 10px;
+    font-weight: 400;
+    opacity: 1;
+    color: #FFFFFF;
+}
