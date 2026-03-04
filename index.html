@@ -1,11 +1,229 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>DogiTech - Plomberie, Électricité, Petits Travaux | Bruxelles</title>
+    <meta name="description" content="DogiTech - Services de plomberie, électricité et petits travaux à Bruxelles. Devis clair avant intervention.">
+    <link rel="stylesheet" href="index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Roboto:wght@400;500&family=Inter:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/styles_index.css">
 </head>
 <body>
-    <h1>Hello</h1>
+    <!-- Bouton d'urgence fixe -->
+    <a href="tel:+32123456789" class="emergency-btn" aria-label="Appel d'urgence">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+        </svg>
+    </a>
+
+    <!-- TU VAS AJOUTER ICI : Overlay blur + Menu burger -->
+
+    <!-- Header -->
+    <header class="main-header">
+        <div class="header-background">
+            <!-- Icônes décoratives -->
+            <div class="deco-icon deco-icon-1"></div>
+            <div class="deco-icon deco-icon-2"></div>
+            <div class="deco-icon deco-icon-3"></div>
+        </div>
+        <div class="header-content">
+            <img src="logo-white.png" alt="DogiTech" class="header-logo">
+            <div class="hamburger-icon" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="hero-image-container">
+            <img src="/asset/plombier.png" alt="Plombier professionnel" class="hero-image">
+        </div>
+        <div class="hero-content">
+            <h1 class="hero-title">PLOMBERIE, ÉLECTRICITÉ, PETITS TRAVAUX.</h1>
+            <p class="hero-subtitle">On regarde. On explique. On répare. Devis clair avant intervention.</p>
+            <div class="hero-cta">
+                <a href="tel:+32123456789" class="btn btn-primary">Appeler maintenant</a>
+                <a href="contact.html" class="btn btn-outline">Demander un devis</a>
+            </div>
+        </div>
+    </section>
+
+  <!-- Section Nos expertises -->
+  <section class="expertises-section" id="expertises">
+    <h2 class="section-title">Nos expertises</h2>
+    <p class="section-subtitle">Des services professionnels adaptés à vos besoins</p>
+    
+    <div class="expertises-carousel">
+        <div class="expertise-card">
+            <img src="plomberie.jpg" alt="Services de plomberie" class="expertise-image">
+            <span class="expertise-label">PLOMBERIE</span>
+        </div>
+        <div class="expertise-card">
+            <img src="electricite.jpg" alt="Services d'électricité" class="expertise-image">
+            <span class="expertise-label">ÉLECTRICITÉ</span>
+        </div>
+        <div class="expertise-card">
+            <img src="petits-travaux.jpg" alt="Petits travaux" class="expertise-image">
+            <span class="expertise-label">PETIT TRAVAUX</span>
+        </div>
+    </div>
+</section>
+
+<!-- Section Pourquoi nous faire confiance -->
+<section class="confiance-section" id="confiance">
+    <h2 class="confiance-title">Pourquoi nous faire confiance ?</h2>
+    
+    <div class="confiance-grid">
+        <div class="confiance-item">
+            <div class="confiance-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M2 12H5M5 12C5 15.866 8.13401 19 12 19M5 12C5 8.13401 8.13401 5 12 5M19 12H22M19 12C19 15.866 15.866 19 12 19M19 12C19 8.13401 15.866 5 12 5M12 2V5M12 19V22M15 12C15 13.6569 13.6569 15 12 15C10.3431 15 9 13.6569 9 12C9 10.3431 10.3431 9 12 9C13.6569 9 15 10.3431 15 12Z" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </div>
+            <div class="confiance-text">
+                <h3>Zones</h3>
+                <p>Intervention locale. On annonce clairement où on se déplace.</p>
+            </div>
+        </div>
+
+        <div class="confiance-item">
+            <div class="confiance-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M10 2H14M12 14L15 11M20 14C20 18.4183 16.4183 22 12 22C7.58172 22 4 18.4183 4 14C4 9.58172 7.58172 6 12 6C16.4183 6 20 9.58172 20 14Z" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </div>
+            <div class="confiance-text">
+                <h3>Délais réalistes</h3>
+                <p>Pas de faux "dans l'heure" si ce n'est pas possible. On annonce un délai honnête.</p>
+            </div>
+        </div>
+
+        <div class="confiance-item">
+            <div class="confiance-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M13 7.00005L8.70005 2.70005C8.24842 2.2506 7.6372 1.99829 7.00005 1.99829C6.36289 1.99829 5.75167 2.2506 5.30005 2.70005L2.70005 5.30005C2.2506 5.75167 1.99829 6.36289 1.99829 7.00005C1.99829 7.6372 2.2506 8.24842 2.70005 8.70005L7.00005 13M8 6L10 4M18 16L20 14M17 11L21.3 15.3C22.24 16.24 22.24 17.76 21.3 18.7L18.7 21.3C17.76 22.24 16.24 22.24 15.3 21.3L11 17M15 5L19 9M21.1741 6.81189C21.7028 6.28332 21.9998 5.56636 21.9999 4.81875C22 4.07113 21.7031 3.3541 21.1746 2.82539C20.646 2.29668 19.929 1.99961 19.1814 1.99951C18.4338 1.99942 17.7168 2.29632 17.1881 2.82489L3.84206 16.1739C3.60988 16.4054 3.43817 16.6904 3.34206 17.0039L2.02106 21.3559C1.99521 21.4424 1.99326 21.5342 2.01541 21.6217C2.03756 21.7092 2.08298 21.7891 2.14685 21.8529C2.21073 21.9167 2.29068 21.962 2.37821 21.984C2.46575 22.006 2.55762 22.0039 2.64406 21.9779L6.99706 20.6579C7.31023 20.5626 7.59523 20.392 7.82706 20.1609L21.1741 6.81189Z" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </div>
+            <div class="confiance-text">
+                <h3>Conformité</h3>
+                <p>Installations faites selon les normes en vigueur. Pas de bricolage dangereux.</p>
+            </div>
+        </div>
+
+        <div class="confiance-item">
+            <div class="confiance-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 15C21 15.5304 20.7893 16.0391 20.4142 16.4142C20.0391 16.7893 19.5304 17 19 17H7L3 21V5C3 4.46957 3.21071 3.96086 3.58579 3.58579C3.96086 3.21071 4.46957 3 5 3H19C19.5304 3 20.0391 3.21071 20.4142 3.58579C20.7893 3.96086 21 4.46957 21 5V15Z" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M14.7999 7.50001C14.4549 7.1556 13.9874 6.96216 13.4999 6.96216C13.0124 6.96216 12.5449 7.1556 12.1999 7.50001L11.9999 7.80001L11.6999 7.50001C11.5161 7.34242 11.303 7.22259 11.0728 7.14735C10.8427 7.07212 10.5999 7.04296 10.3585 7.06153C10.1171 7.0801 9.88165 7.14604 9.6657 7.25559C9.44976 7.36514 9.2575 7.51616 9.09992 7.70001C8.94233 7.88386 8.8225 8.09695 8.74726 8.32711C8.67203 8.55727 8.64287 8.79999 8.66144 9.04143C8.68001 9.28286 8.74595 9.51827 8.8555 9.73422C8.96505 9.95016 9.11606 10.1424 9.29992 10.3L11.9999 13L14.6999 10.3C15.5999 9.40001 15.4999 8.20001 14.7999 7.50001Z" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </div>
+            <div class="confiance-text">
+                <h3>Sécurité</h3>
+                <p>Votre installation doit être fiable. On sécurise avant d'embellir.</p>
+            </div>
+        </div>
+    </div>
+
+    <a href="contact.html" class="btn btn-white">Envoyer un message</a>
+</section>
+
+<!-- Section Avis clients -->
+<section class="avis-section" id="avis">
+    <h2 class="section-title">Avis clients</h2>
+    
+    <div class="avis-carousel">
+        <div class="avis-card">
+            <div class="avis-header">
+                <img src="avatar1.jpg" alt="Bobby" class="avis-avatar">
+                <div class="avis-info">
+                    <h3 class="avis-name">Bobby</h3>
+                    <p class="avis-date">Janvier 2024</p>
+                </div>
+                <div class="avis-rating">
+                    <span class="star">★</span>
+                    <span class="star">★</span>
+                    <span class="star">★</span>
+                    <span class="star">★</span>
+                    <span class="star">★</span>
+                    <span class="rating-number">5.0</span>
+                </div>
+            </div>
+            <p class="avis-text">Très satisfait ! Le diagnostic a été fait rapidement et le devis était transparent. Réparation immédiate et conseils pour éviter que le problème revienne.</p>
+        </div>
+
+        <div class="avis-card">
+            <div class="avis-header">
+                <img src="avatar2.jpg" alt="Marie" class="avis-avatar">
+                <div class="avis-info">
+                    <h3 class="avis-name">Marie L.</h3>
+                    <p class="avis-date">Février 2024</p>
+                </div>
+                <div class="avis-rating">
+                    <span class="star">★</span>
+                    <span class="star">★</span>
+                    <span class="star">★</span>
+                    <span class="star">★</span>
+                    <span class="star">★</span>
+                    <span class="rating-number">5.0</span>
+                </div>
+            </div>
+            <p class="avis-text">Intervention rapide pour un problème électrique. Professionnel, à l'écoute et prix raisonnable. Je recommande vivement !</p>
+        </div>
+
+        <div class="avis-card">
+            <div class="avis-header">
+                <img src="avatar3.jpg" alt="Thomas" class="avis-avatar">
+                <div class="avis-info">
+                    <h3 class="avis-name">Thomas D.</h3>
+                    <p class="avis-date">Mars 2024</p>
+                </div>
+                <div class="avis-rating">
+                    <span class="star">★</span>
+                    <span class="star">★</span>
+                    <span class="star">★</span>
+                    <span class="star">★</span>
+                    <span class="star">★</span>
+                    <span class="rating-number">5.0</span>
+                </div>
+            </div>
+            <p class="avis-text">Excellent service ! Travail soigné, respect des délais annoncés. Enfin un artisan sur qui on peut compter.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="main-footer">
+    <img src="logo-white.png" alt="DogiTech" class="footer-logo">
+    
+    <nav class="footer-links">
+        <a href="mentions-legales.html">MENTIONS LÉGALES</a>
+        <a href="politique-confidentialite.html">CONFIDENTIALITÉ</a>
+        <a href="#cookies">COOKIES</a>
+    </nav>
+
+    <div class="footer-contact">
+        <a href="tel:+32123456789" class="footer-contact-item">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+            </svg>
+        </a>
+        <a href="mailto:contact@dogitech.be" class="footer-contact-item">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                <polyline points="22,6 12,13 2,6"></polyline>
+            </svg>
+        </a>
+    </div>
+
+    <p class="footer-copyright">© 2026 Nicolas Dogimont - tous droits réservés</p>
+</footer>
+
+<script src="index.js"></script>
 </body>
 </html>
