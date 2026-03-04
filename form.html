@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulaire de Contact</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .container {
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            max-width: 500px;
+            width: 100%;
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 10px;
+            font-size: 28px;
+        }
+
+        .subtitle {
+            color: #666;
+            margin-bottom: 30px;
+            font-size: 14px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #333;
+            font-weight: 500;
+            font-size: 14px;
+        }
+
+        label .required {
+            color: #e74c3c;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 15px;
+            transition: all 0.3s ease;
+            font-family: inherit;
+        }
+
+        input:focus, textarea:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+
+        input.error, textarea.error {
+            border-color: #e74c3c;
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .error-message {
+            color: #e74c3c;
+            font-size: 13px;
+            margin-top: 5px;
+            display: none;
+        }
+
+        .error-message.show {
+            display: block;
+        }
+
+        .submit-btn {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 14px 30px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            width: 100%;
+            transition: transform 0.2s, box-shadow 0.2s;
+            margin-top: 10px;
+        }
+
+        .submit-btn:hover:not(:disabled) {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4);
+        }
+
+        .submit-btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+
+        .spinner {
+            display: none;
+            width: 20px;
+            height: 20px;
+            border: 3px solid rgba(255,255,255,0.3);
+            border-top-color: white;
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+            margin: 0 auto;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        .message {
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            display: none;
+            font-size: 14px;
+        }
+
+        .message.success {
+            background: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+
+        .message.error {
+            background: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+
+        .message.show {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Contactez-nous</h1>
+        <p class="subtitle">Nous vous répondrons dans les plus brefs délais</p>
+
+        <div id="responseMessage" class="message"></div>
+
+        <form id="contactForm" novalidate>
+            <div class="form-group">
+                <label for="name">Nom complet <span class="required">*</span></label>
+                <input type="text" id="name" name="name" required minlength="2">
+                <div class="error-message" id="nameError"></div>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email <span class="required">*</span></label>
+                <input type="email" id="email" name="email" required>
+                <div class="error-message" id="emailError"></div>
+            </div>
+
+            <div class="form-group">
+                <label for="subject">Sujet <span class="required">*</span></label>
+                <input type="text" id="subject" name="subject" required minlength="3">
+                <div class="error-message" id="subjectError"></div>
+            </div>
+
+            <div class="form-group">
+                <label for="message">Message <span class="required">*</span></label>
+                <textarea id="message" name="message" required minlength="10"></textarea>
+                <div class="error-message" id="messageError"></div>
+            </div>
+
+            <!-- Honeypot anti-bot (invisible pour les humains) -->
+            <input type="text" name="website" style="display:none" tabindex="-1" autocomplete="off">
+
+            <button type="submit" class="submit-btn" id="submitBtn">
+                <span id="btnText">Envoyer le message</span>
+                <div class="spinner" id="spinner"></div>
+            </button>
+        </form>
+    </div>
+
+    <script>
+        const form = document.getElementById('contactForm');
+        const submitBtn = document.getElementById('submitBtn');
+        const btnText = document.getElementById('btnText');
+        const spinner = document.getElementById('spinner');
+        const responseMessage = document.getElementById('responseMessage');
+
+        // Validation en temps réel
+        const fields = {
+            name: {
+                input: document.getElementById('name'),
+                error: document.getElementById('nameError'),
+                validate: (value) => {
+                    if (!value.trim()) return 'Le nom est requis';
+                    if (value.trim().length < 2) return 'Le nom doit contenir au moins 2 caractères';
+                    return '';
+                }
+            },
+            email: {
+                input: document.getElementById('email'),
+                error: document.getElementById('emailError'),
+                validate: (value) => {
+                    if (!value.trim()) return 'L\'email est requis';
+                    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                    if (!emailRegex.test(value)) return 'Email invalide';
+                    return '';
+                }
+            },
+            subject: {
+                input: document.getElementById('subject'),
+                error: document.getElementById('subjectError'),
+                validate: (value) => {
+                    if (!value.trim()) return 'Le sujet est requis';
+                    if (value.trim().length < 3) return 'Le sujet doit contenir au moins 3 caractères';
+                    return '';
+                }
+            },
+            message: {
+                input: document.getElementById('message'),
+                error: document.getElementById('messageError'),
+                validate: (value) => {
+                    if (!value.trim()) return 'Le message est requis';
+                    if (value.trim().length < 10) return 'Le message doit contenir au moins 10 caractères';
+                    return '';
+                }
+            }
+        };
+
+        // Ajouter la validation en temps réel
+        Object.keys(fields).forEach(fieldName => {
+            const field = fields[fieldName];
+            field.input.addEventListener('blur', () => validateField(fieldName));
+            field.input.addEventListener('input', () => {
+                if (field.error.classList.contains('show')) {
+                    validateField(fieldName);
+                }
+            });
+        });
+
+        function validateField(fieldName) {
+            const field = fields[fieldName];
+            const errorMsg = field.validate(field.input.value);
+            
+            if (errorMsg) {
+                field.input.classList.add('error');
+                field.error.textContent = errorMsg;
+                field.error.classList.add('show');
+                return false;
+            } else {
+                field.input.classList.remove('error');
+                field.error.classList.remove('show');
+                return true;
+            }
+        }
+
+        function validateForm() {
+            let isValid = true;
+            Object.keys(fields).forEach(fieldName => {
+                if (!validateField(fieldName)) {
+                    isValid = false;
+                }
+            });
+            return isValid;
+        }
+
+        function showMessage(message, type) {
+            responseMessage.textContent = message;
+            responseMessage.className = `message ${type} show`;
+            setTimeout(() => {
+                responseMessage.classList.remove('show');
+            }, 5000);
+        }
+
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            // Validation
+            if (!validateForm()) {
+                showMessage('Veuillez corriger les erreurs avant de soumettre', 'error');
+                return;
+            }
+
+            // Anti-bot honeypot check
+            if (form.website.value) {
+                console.log('Bot detected');
+                return;
+            }
+
+            // UI pendant l'envoi
+            submitBtn.disabled = true;
+            btnText.style.display = 'none';
+            spinner.style.display = 'block';
+
+            // Préparer les données
+            const formData = new FormData(form);
+
+            try {
+                // Envoi vers le backend PHP
+                const response = await fetch('process-contact.php', {
+                    method: 'POST',
+                    body: formData
+                });
+
+                const result = await response.json();
+
+                if (result.success) {
+                    showMessage(result.message || 'Message envoyé avec succès !', 'success');
+                    form.reset();
+                    // Retirer les classes error si présentes
+                    Object.keys(fields).forEach(fieldName => {
+                        fields[fieldName].input.classList.remove('error');
+                    });
+                } else {
+                    showMessage(result.message || 'Une erreur est survenue', 'error');
+                }
+
+            } catch (error) {
+                console.error('Erreur:', error);
+                showMessage('Erreur de connexion. Veuillez réessayer.', 'error');
+            } finally {
+                // Réactiver le bouton
+                submitBtn.disabled = false;
+                btnText.style.display = 'inline';
+                spinner.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+</html>
