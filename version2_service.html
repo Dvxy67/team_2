@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,16 +9,19 @@
     <!-- Polices Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&family=Inter:wght@400;500&display=swap"
+        rel="stylesheet">
     <!-- Font Awesome pour les icônes -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="/css/styles_version2_service.css">
 </head>
+
 <body>
     <!-- Header -->
     <header class="header">
         <div class="header-background"></div>
-        
+
         <!-- Status Bar iPhone (simulation) -->
         <div class="status-bar">
             <span class="status-time">9:41</span>
@@ -27,309 +31,318 @@
                 <i class="fas fa-battery-full"></i>
             </div>
         </div>
-        
+
         <!-- Navigation -->
         <nav class="navbar">
-            <div class="logo">LOGO</div>
+            <a href="index.html" class="logo">
+                <img src="/asset/logo.svg" alt="Nicolas Dogimont Plomberie">
+            </a>
             <button class="menu-toggle" aria-label="Menu">
                 <i class="fas fa-bars"></i>
             </button>
         </nav>
-    </header>
 
-    <main class="main-content">
-        <!-- Hero Section -->
-        <section class="hero">
-            <h1 class="hero-title">Plomberie – Intervention & dépannage</h1>
-            <p class="hero-description">
-                Intervention rapide à Bruxelles et alentours.<br>
-                Devis clair, prix transparents, pas de surprise.
-            </p>
-            <div class="hero-actions">
-                <button class="btn btn-primary">
-                    <i class="fas fa-phone"></i>
-                    Appeler
+        <main class="main-content">
+            <!-- Hero Section -->
+            <section class="hero">
+                <h1 class="hero-title">Plomberie</h1>
+                <p class="hero-description">
+                    Intervention rapide à Bruxelles et alentours.<br>
+                    Devis clair, prix transparents, pas de surprise.
+                </p>
+                <div class="hero-actions">
+                    <button class="btn btn-primary">
+                        <i class="fas fa-phone"></i>
+                        Appeler
+                    </button>
+                    <button class="btn btn-outline">
+                        <i class="fas fa-wrench"></i>
+                        Intervention
+                    </button>
+                </div>
+            </section>
+
+            <!-- Filters -->
+            <section class="filters">
+                <button class="filter-chip">
+                    <span class="chip-icon">
+                        <i class="fas fa-wrench"></i>
+                    </span>
+                    Services
                 </button>
-                <button class="btn btn-outline">
-                    <i class="fas fa-wrench"></i>
-                    Intervention
+                <button class="filter-chip">
+                    <span class="chip-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </span>
+                    Localisation
                 </button>
-            </div>
-        </section>
+            </section>
 
-        <!-- Filters -->
-        <section class="filters">
-            <button class="filter-chip">
-                <span class="chip-icon">
-                    <i class="fas fa-wrench"></i>
-                </span>
-                Services
-            </button>
-            <button class="filter-chip">
-                <span class="chip-icon">
-                    <i class="fas fa-map-marker-alt"></i>
-                </span>
-                Localisation
-            </button>
-        </section>
+            <!-- Services Grid -->
+            <section class="services">
+                <div class="services-grid">
+                    <article class="service-card">
+                        <div class="card-image"></div>
+                        <div class="card-body">
+                            <h3 class="card-title">Fuite sous l'évier</h3>
+                            <p class="card-text">Eau visible dans le meuble ou sol humide.</p>
+                        </div>
+                        <button class="btn btn-card">Intervention</button>
+                    </article>
 
-        <!-- Services Grid -->
-        <section class="services">
-            <div class="services-grid">
-                <article class="service-card">
-                    <div class="card-image"></div>
-                    <div class="card-body">
-                        <h3 class="card-title">Fuite sous l'évier</h3>
-                        <p class="card-text">Eau visible dans le meuble ou sol humide.</p>
+                    <article class="service-card">
+                        <div class="card-image"></div>
+                        <div class="card-body">
+                            <h3 class="card-title">Disjoncteur qui saute</h3>
+                            <p class="card-text">Le courant se coupe dès que vous branchez un appareil.</p>
+                        </div>
+                        <button class="btn btn-card">Intervention</button>
+                    </article>
+
+                    <article class="service-card">
+                        <div class="card-image"></div>
+                        <div class="card-body">
+                            <h3 class="card-title">WC qui coule</h3>
+                            <p class="card-text">Problème de chasse d'eau ou fuite continue.</p>
+                        </div>
+                        <button class="btn btn-card">Intervention</button>
+                    </article>
+
+                    <article class="service-card">
+                        <div class="card-image"></div>
+                        <div class="card-body">
+                            <h3 class="card-title">Autre problème</h3>
+                            <p class="card-text">Contactez-nous pour tout autre urgence.</p>
+                        </div>
+                        <button class="btn btn-card">Intervention</button>
+                    </article>
+                </div>
+            </section>
+
+            <!-- Process Section -->
+            <section class="process">
+                <h2 class="section-heading">Comment se passe l'intervention ?</h2>
+
+                <div class="process-steps">
+                    <div class="process-step">
+                        <div class="step-badge">1</div>
+                        <div class="step-content">
+                            <h3 class="step-title">Diagnostic sur place</h3>
+                            <p class="step-text">Évaluation complète de votre problème de plomberie</p>
+                        </div>
                     </div>
-                    <button class="btn btn-card">Intervention</button>
-                </article>
 
-                <article class="service-card">
-                    <div class="card-image"></div>
-                    <div class="card-body">
-                        <h3 class="card-title">Disjoncteur qui saute</h3>
-                        <p class="card-text">Le courant se coupe dès que vous branchez un appareil.</p>
+                    <div class="process-step">
+                        <div class="step-badge">2</div>
+                        <div class="step-content">
+                            <h3 class="step-title">Identification précise du problème</h3>
+                            <p class="step-text">Analyse technique pour déterminer la cause exacte</p>
+                        </div>
                     </div>
-                    <button class="btn btn-card">Intervention</button>
-                </article>
 
-                <article class="service-card">
-                    <div class="card-image"></div>
-                    <div class="card-body">
-                        <h3 class="card-title">WC qui coule</h3>
-                        <p class="card-text">Problème de chasse d'eau ou fuite continue.</p>
+                    <div class="process-step">
+                        <div class="step-badge">3</div>
+                        <div class="step-content">
+                            <h3 class="step-title">Proposition claire avant réparation</h3>
+                            <p class="step-text">Devis transparent avec détail des travaux</p>
+                        </div>
                     </div>
-                    <button class="btn btn-card">Intervention</button>
-                </article>
 
-                <article class="service-card">
-                    <div class="card-image"></div>
-                    <div class="card-body">
-                        <h3 class="card-title">Autre problème</h3>
-                        <p class="card-text">Contactez-nous pour tout autre urgence.</p>
+                    <div class="process-step">
+                        <div class="step-badge">4</div>
+                        <div class="step-content">
+                            <h3 class="step-title">Réparation immédiate si possible</h3>
+                            <p class="step-text">Intervention rapide pour résoudre le problème</p>
+                        </div>
                     </div>
-                    <button class="btn btn-card">Intervention</button>
-                </article>
-            </div>
-        </section>
 
-        <!-- Process Section -->
-        <section class="process">
-            <h2 class="section-heading">Comment se passe l'intervention ?</h2>
-            
-            <div class="process-steps">
-                <div class="process-step">
-                    <div class="step-badge">1</div>
-                    <div class="step-content">
-                        <h3 class="step-title">Diagnostic sur place</h3>
-                        <p class="step-text">Évaluation complète de votre problème de plomberie</p>
+                    <div class="process-step">
+                        <div class="step-badge">5</div>
+                        <div class="step-content">
+                            <h3 class="step-title">Vérification finale et conseils</h3>
+                            <p class="step-text">Test complet et recommandations d'entretien</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Pricing Section -->
+            <section class="pricing">
+                <div class="pricing-header">
+                    <h2 class="section-heading">Tarif indicatif</h2>
+                    <p class="section-subheading">Le prix dépend du matériel nécessaire et de l'accessibilité.</p>
+                </div>
+
+                <div class="pricing-list">
+                    <div class="pricing-item">
+                        <div class="pricing-icon-wrapper">
+                            <img src="https://placehold.co/50x47" alt="Déplacement" class="pricing-icon">
+                        </div>
+                        <div class="pricing-details">
+                            <h3 class="pricing-name">Déplacement</h3>
+                            <p class="pricing-label">A partir de</p>
+                        </div>
+                        <div class="pricing-value">XX€</div>
+                    </div>
+
+                    <div class="pricing-item">
+                        <div class="pricing-icon-wrapper">
+                            <img src="https://placehold.co/50x47" alt="Petite réparation" class="pricing-icon">
+                        </div>
+                        <div class="pricing-details">
+                            <h3 class="pricing-name">Petite réparation</h3>
+                            <p class="pricing-label">A partir de</p>
+                        </div>
+                        <div class="pricing-value">XX€</div>
+                    </div>
+
+                    <div class="pricing-item">
+                        <div class="pricing-icon-wrapper">
+                            <img src="https://placehold.co/50x47" alt="Plus complexe" class="pricing-icon">
+                        </div>
+                        <div class="pricing-details">
+                            <h3 class="pricing-name">Plus complexe</h3>
+                            <p class="pricing-label">A partir de</p>
+                        </div>
+                        <div class="pricing-value">XX€</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- FAQ Section -->
+            <section class="faq">
+                <p class="faq-intro">Les facteurs clés qui influencent le tarif de l'intervention</p>
+
+                <div class="faq-list">
+                    <details class="faq-item">
+                        <summary class="faq-question">Urgence soir / week-end</summary>
+                        <p class="faq-answer">Les interventions en dehors des heures ouvrables font l'objet d'un
+                            supplément tarifaire pour assurer votre dépannage rapide.</p>
+                    </details>
+
+                    <details class="faq-item">
+                        <summary class="faq-question">Accessibilité difficile</summary>
+                        <p class="faq-answer">Un supplément peut s'appliquer si l'accès au lieu d'intervention nécessite
+                            un équipement spécifique ou un temps additionnel.</p>
+                    </details>
+
+                    <details class="faq-item">
+                        <summary class="faq-question">Installation vétuste</summary>
+                        <p class="faq-answer">Les installations anciennes peuvent nécessiter plus de temps et de
+                            précautions, impactant le coût de l'intervention.</p>
+                    </details>
+
+                    <details class="faq-item">
+                        <summary class="faq-question">Pièce à remplacer</summary>
+                        <p class="faq-answer">Le coût des pièces de rechange varie selon la marque et la disponibilité.
+                            Devis détaillé avant intervention.</p>
+                    </details>
+
+                    <details class="faq-item">
+                        <summary class="faq-question">Complexité du problème</summary>
+                        <p class="faq-answer">Certains problèmes nécessitent plus de diagnostic et d'expertise, ce qui
+                            peut influencer le tarif final.</p>
+                    </details>
+                </div>
+
+                <div class="faq-cta">
+                    <p class="cta-text">Besoin d'aide ?</p>
+                    <button class="btn btn-primary">Contactez-nous</button>
+                </div>
+            </section>
+
+            <!-- Reviews Section -->
+            <section class="reviews">
+                <div class="reviews-header">
+                    <h2 class="reviews-heading">Reviews</h2>
+                    <div class="reviews-rating">
+                        <i class="fas fa-star"></i>
+                        <span class="rating-value">4.8 - 125 reviews</span>
                     </div>
                 </div>
 
-                <div class="process-step">
-                    <div class="step-badge">2</div>
-                    <div class="step-content">
-                        <h3 class="step-title">Identification précise du problème</h3>
-                        <p class="step-text">Analyse technique pour déterminer la cause exacte</p>
-                    </div>
-                </div>
-
-                <div class="process-step">
-                    <div class="step-badge">3</div>
-                    <div class="step-content">
-                        <h3 class="step-title">Proposition claire avant réparation</h3>
-                        <p class="step-text">Devis transparent avec détail des travaux</p>
-                    </div>
-                </div>
-
-                <div class="process-step">
-                    <div class="step-badge">4</div>
-                    <div class="step-content">
-                        <h3 class="step-title">Réparation immédiate si possible</h3>
-                        <p class="step-text">Intervention rapide pour résoudre le problème</p>
-                    </div>
-                </div>
-
-                <div class="process-step">
-                    <div class="step-badge">5</div>
-                    <div class="step-content">
-                        <h3 class="step-title">Vérification finale et conseils</h3>
-                        <p class="step-text">Test complet et recommandations d'entretien</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Pricing Section -->
-        <section class="pricing">
-            <div class="pricing-header">
-                <h2 class="section-heading">Tarif indicatif</h2>
-                <p class="section-subheading">Le prix dépend du matériel nécessaire et de l'accessibilité.</p>
-            </div>
-
-            <div class="pricing-list">
-                <div class="pricing-item">
-                    <div class="pricing-icon-wrapper">
-                        <img src="https://placehold.co/50x47" alt="Déplacement" class="pricing-icon">
-                    </div>
-                    <div class="pricing-details">
-                        <h3 class="pricing-name">Déplacement</h3>
-                        <p class="pricing-label">A partir de</p>
-                    </div>
-                    <div class="pricing-value">XX€</div>
-                </div>
-
-                <div class="pricing-item">
-                    <div class="pricing-icon-wrapper">
-                        <img src="https://placehold.co/50x47" alt="Petite réparation" class="pricing-icon">
-                    </div>
-                    <div class="pricing-details">
-                        <h3 class="pricing-name">Petite réparation</h3>
-                        <p class="pricing-label">A partir de</p>
-                    </div>
-                    <div class="pricing-value">XX€</div>
-                </div>
-
-                <div class="pricing-item">
-                    <div class="pricing-icon-wrapper">
-                        <img src="https://placehold.co/50x47" alt="Plus complexe" class="pricing-icon">
-                    </div>
-                    <div class="pricing-details">
-                        <h3 class="pricing-name">Plus complexe</h3>
-                        <p class="pricing-label">A partir de</p>
-                    </div>
-                    <div class="pricing-value">XX€</div>
-                </div>
-            </div>
-        </section>
-
-        <!-- FAQ Section -->
-        <section class="faq">
-            <p class="faq-intro">Les facteurs clés qui influencent le tarif de l'intervention</p>
-
-            <div class="faq-list">
-                <details class="faq-item">
-                    <summary class="faq-question">Urgence soir / week-end</summary>
-                    <p class="faq-answer">Les interventions en dehors des heures ouvrables font l'objet d'un supplément tarifaire pour assurer votre dépannage rapide.</p>
-                </details>
-
-                <details class="faq-item">
-                    <summary class="faq-question">Accessibilité difficile</summary>
-                    <p class="faq-answer">Un supplément peut s'appliquer si l'accès au lieu d'intervention nécessite un équipement spécifique ou un temps additionnel.</p>
-                </details>
-
-                <details class="faq-item">
-                    <summary class="faq-question">Installation vétuste</summary>
-                    <p class="faq-answer">Les installations anciennes peuvent nécessiter plus de temps et de précautions, impactant le coût de l'intervention.</p>
-                </details>
-
-                <details class="faq-item">
-                    <summary class="faq-question">Pièce à remplacer</summary>
-                    <p class="faq-answer">Le coût des pièces de rechange varie selon la marque et la disponibilité. Devis détaillé avant intervention.</p>
-                </details>
-
-                <details class="faq-item">
-                    <summary class="faq-question">Complexité du problème</summary>
-                    <p class="faq-answer">Certains problèmes nécessitent plus de diagnostic et d'expertise, ce qui peut influencer le tarif final.</p>
-                </details>
-            </div>
-
-            <div class="faq-cta">
-                <p class="cta-text">Besoin d'aide ?</p>
-                <button class="btn btn-primary">Contactez-nous</button>
-            </div>
-        </section>
-
-        <!-- Reviews Section -->
-        <section class="reviews">
-            <div class="reviews-header">
-                <h2 class="reviews-heading">Reviews</h2>
-                <div class="reviews-rating">
-                    <i class="fas fa-star"></i>
-                    <span class="rating-value">4.8 - 125 reviews</span>
-                </div>
-            </div>
-
-            <div class="reviews-slider">
-                <article class="review-card">
-                    <div class="review-header">
-                        <div class="reviewer">
-                            <img src="https://placehold.co/40x40" alt="Bobby" class="reviewer-avatar">
-                            <div class="reviewer-info">
-                                <p class="reviewer-name">Bobby</p>
-                                <p class="review-date">Janvier 2024</p>
+                <div class="reviews-slider">
+                    <article class="review-card">
+                        <div class="review-header">
+                            <div class="reviewer">
+                                <img src="https://placehold.co/40x40" alt="Bobby" class="reviewer-avatar">
+                                <div class="reviewer-info">
+                                    <p class="reviewer-name">Bobby</p>
+                                    <p class="review-date">Janvier 2024</p>
+                                </div>
+                            </div>
+                            <div class="review-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <span class="rating-score">5.0</span>
                             </div>
                         </div>
-                        <div class="review-rating">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <span class="rating-score">5.0</span>
-                        </div>
-                    </div>
-                    <p class="review-content">Service impeccable ! Intervention rapide et professionnelle. Le plombier a pris le temps d'expliquer le problème et la solution.</p>
-                </article>
+                        <p class="review-content">Service impeccable ! Intervention rapide et professionnelle. Le
+                            plombier a pris le temps d'expliquer le problème et la solution.</p>
+                    </article>
 
-                <article class="review-card">
-                    <div class="review-header">
-                        <div class="reviewer">
-                            <img src="https://placehold.co/40x40" alt="Marie" class="reviewer-avatar">
-                            <div class="reviewer-info">
-                                <p class="reviewer-name">Marie</p>
-                                <p class="review-date">Janvier 2024</p>
+                    <article class="review-card">
+                        <div class="review-header">
+                            <div class="reviewer">
+                                <img src="https://placehold.co/40x40" alt="Marie" class="reviewer-avatar">
+                                <div class="reviewer-info">
+                                    <p class="reviewer-name">Marie</p>
+                                    <p class="review-date">Janvier 2024</p>
+                                </div>
+                            </div>
+                            <div class="review-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <span class="rating-score">5.0</span>
                             </div>
                         </div>
-                        <div class="review-rating">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <span class="rating-score">5.0</span>
-                        </div>
-                    </div>
-                    <p class="review-content">Prix transparent, pas de mauvaise surprise. Très satisfaite du travail effectué et de la propreté après l'intervention.</p>
-                </article>
+                        <p class="review-content">Prix transparent, pas de mauvaise surprise. Très satisfaite du travail
+                            effectué et de la propreté après l'intervention.</p>
+                    </article>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-logo">LOGO</div>
+
+            <nav class="footer-nav">
+                <a href="#" class="footer-link">Mentions légales</a>
+                <a href="#" class="footer-link">Confidentialité</a>
+                <a href="#" class="footer-link">Cookies</a>
+            </nav>
+
+            <div class="footer-social">
+                <a href="#" class="social-link" aria-label="Facebook">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="#" class="social-link" aria-label="Twitter">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="#" class="social-link" aria-label="YouTube">
+                    <i class="fab fa-youtube"></i>
+                </a>
+                <a href="#" class="social-link" aria-label="LinkedIn">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
             </div>
-        </section>
-    </main>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="footer-logo">LOGO</div>
+            <p class="footer-copyright">© 2026 Nicolas Dogimont - tous droits réservés</p>
+        </footer>
 
-        <nav class="footer-nav">
-            <a href="#" class="footer-link">Mentions légales</a>
-            <a href="#" class="footer-link">Confidentialité</a>
-            <a href="#" class="footer-link">Cookies</a>
-        </nav>
+        <!-- Bouton d'appel urgence flottant -->
+        <a href="tel:+32XXXXXXXXX" class="emergency-btn" aria-label="Appel d'urgence">
+            <i class="fas fa-phone"></i>
+        </a>
 
-        <div class="footer-social">
-            <a href="#" class="social-link" aria-label="Facebook">
-                <i class="fab fa-facebook-f"></i>
-            </a>
-            <a href="#" class="social-link" aria-label="Twitter">
-                <i class="fab fa-twitter"></i>
-            </a>
-            <a href="#" class="social-link" aria-label="YouTube">
-                <i class="fab fa-youtube"></i>
-            </a>
-            <a href="#" class="social-link" aria-label="LinkedIn">
-                <i class="fab fa-linkedin-in"></i>
-            </a>
-        </div>
-
-        <p class="footer-copyright">© 2026 Nicolas Dogimont - tous droits réservés</p>
-    </footer>
-
-    <!-- Bouton d'appel urgence flottant -->
-    <a href="tel:+32XXXXXXXXX" class="emergency-btn" aria-label="Appel d'urgence">
-        <i class="fas fa-phone"></i>
-    </a>
-
-    <script src="script.js"></script>
+        <script src="scripte_service.js"></script>
 </body>
+
 </html>

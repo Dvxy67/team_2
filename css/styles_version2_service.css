@@ -85,7 +85,8 @@ button {
 /* ========== HEADER ========== */
 .header {
     position: relative;
-    width: 100%;
+    width: 100vw;
+    margin-left: calc(50% - 50vw);
     z-index: 100;
 }
 
@@ -100,6 +101,8 @@ button {
 }
 
 .status-bar {
+    max-width: var(--max-width-mobile);
+    margin: 0 auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -115,16 +118,29 @@ button {
 }
 
 .navbar {
+    max-width: var(--max-width-mobile);
+    margin: 0 auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: var(--spacing-lg) var(--content-padding);
+    padding: var(--spacing-lg) 5px;
 }
 
+
 .logo {
-    font-size: var(--text-lg);
-    font-weight: 700;
-    color: #F4F4F4;
+    display: flex;
+    align-items: center;
+    height: 40px;
+    text-decoration: none;  /* Enlève le soulignement du lien */
+}
+
+.logo img,
+.logo svg {
+    height: 100%;
+    width: auto;
+    max-width: 150px;
+    object-fit: contain;
+    display: block;
 }
 
 .menu-toggle {
@@ -367,13 +383,18 @@ button {
 /* ========== PRICING SECTION ========== */
 .pricing {
     background: var(--color-background-light);
-    padding: var(--spacing-xl) var(--content-padding);
-    margin: var(--spacing-xxl) calc(-1 * var(--content-padding));
+    width: 100vw;
+    margin-left: calc(50% - 50vw);
+    margin-top: var(--spacing-xxl);
+    margin-bottom: var(--spacing-xxl);
+    padding: var(--spacing-xl) 0;
 }
 
 .pricing-header {
+    max-width: var(--max-width-mobile);
+    margin: 0 auto var(--spacing-xl);
+    padding: 0 var(--content-padding);
     text-align: center;
-    margin-bottom: var(--spacing-xl);
 }
 
 .section-subheading {
@@ -383,6 +404,9 @@ button {
 }
 
 .pricing-list {
+    max-width: var(--max-width-mobile);
+    margin: 0 auto;
+    padding: 0 var(--content-padding);
     display: flex;
     flex-direction: column;
     gap: var(--spacing-md);
@@ -632,8 +656,10 @@ button {
 /* ========== FOOTER ========== */
 .footer {
     background: var(--color-primary);
-    padding: var(--spacing-xl) var(--content-padding);
+    width: 100vw;
+    margin-left: calc(50% - 50vw);
     margin-top: var(--spacing-xxl);
+    padding: var(--spacing-xl) 0;
     text-align: center;
     color: white;
 }
