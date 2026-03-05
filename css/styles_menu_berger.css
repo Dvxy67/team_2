@@ -428,88 +428,84 @@ main {
     transform: translateY(0);
 }
 
-/* Footer */
-footer {
+/* ===========================
+   FOOTER
+   =========================== */
+.main-footer {
     background-color: #257579;
-    padding: 40px 20px 20px;
-    color: #F4F4F4;
-    margin-top: 50px;
-}
-
-.footer-content {
-    max-width: 1200px;
-    margin: 0 auto;
+    color: #FFFFFF;
+    padding: 20px 22px 30px;
+    text-align: center;
 }
 
 .footer-logo {
-    text-align: center;
-    margin-bottom: 30px;
+    height: 40px;
+    width: auto;
+    margin-bottom: 24px;
 }
 
-.footer-logo img {
-    width: 124px;
-    height: auto;
-}
-
-/* Section RGPD du footer */
 .footer-links {
-    max-width: 350px;
-    margin: 0 auto 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    margin-bottom: 60px;
+    max-width: 348px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.footer-divider {
+    width: 100%;
+    height: 1px;
+    background-color: rgba(255, 255, 255, 0.3);
+    margin: 0;
 }
 
 .footer-links a {
-    display: block;
-    text-align: center;
-    color: #FFF;
+    color: #FFFFFF;
+    text-decoration: none;
+    font-family: 'Inter', sans-serif;
     font-size: 18px;
     font-weight: 500;
+    letter-spacing: 2.52px;
     text-transform: uppercase;
-    letter-spacing: 2.5px;
     padding: 16px 0;
-    border-top: 1px solid rgba(255, 255, 255, 0.3);
-    text-decoration: none;
-    transition: opacity 0.3s;
-}
-
-.footer-links a:last-child {
-    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    transition: opacity 0.3s ease;
+    text-align: left;
 }
 
 .footer-links a:hover {
     opacity: 0.8;
 }
 
-/* Informations de contact (icônes) */
 .footer-contact {
     display: flex;
     justify-content: center;
-    gap: 30px;
-    margin: 30px 0;
+    gap: 60px;
+    margin-bottom: 24px;
 }
 
-.footer-contact a {
-    color: #F4F4F4;
-    font-size: 30px;
-    transition: opacity 0.3s;
-    text-decoration: none;
+.footer-contact-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.3s ease;
 }
 
-.footer-contact a:hover {
-    opacity: 0.7;
+.footer-contact-item:hover {
+    opacity: 0.8;
 }
 
-/* Copyright */
-.footer-bottom {
-    text-align: center;
-    margin-top: 30px;
-    padding-top: 20px;
+.footer-contact-item svg {
+    fill: #F4F4F4;
 }
 
-.footer-bottom p {
-    color: #FFF;
-    font-size: 16px;
+.footer-copyright {
+    font-family: 'Roboto', sans-serif;
+    font-size: 10px;
     font-weight: 400;
-    margin: 0;
+    opacity: 1;
+    color: #FFFFFF;
 }
 
 /* Responsive */
