@@ -99,4 +99,47 @@
         </div>
     </footer>
 </body>
+<script>
+    // Menu Burger
+    const menuIcon = document.querySelector('.menu-icon');
+    const menuBurger = document.getElementById('menuBurger');
+    const menuOverlay = document.getElementById('menuOverlay');
+    const closeBtn = document.getElementById('closeBtn');
+    const body = document.body;
+
+    // Fonction pour ouvrir le menu
+    function openMenu() {
+        menuBurger.classList.add('active');
+        menuOverlay.classList.add('active');
+        body.classList.add('menu-open');
+    }
+
+    // Fonction pour fermer le menu
+    function closeMenu() {
+        menuBurger.classList.remove('active');
+        menuOverlay.classList.remove('active');
+        body.classList.remove('menu-open');
+    }
+
+    // Fonction pour toggle le sous-menu Services
+    function toggleServicesMenu() {
+        const submenu = document.getElementById('servicesSubmenu');
+        const chevron = document.getElementById('servicesChevron');
+        
+        submenu.classList.toggle('open');
+        chevron.classList.toggle('rotate');
+    }
+
+    // Event listeners
+    menuIcon.addEventListener('click', openMenu);
+    closeBtn.addEventListener('click', closeMenu);
+    menuOverlay.addEventListener('click', closeMenu);
+
+    // Fermer avec la touche Escape
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && menuBurger.classList.contains('active')) {
+            closeMenu();
+        }
+    });
+</script>
 </html>
