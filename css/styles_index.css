@@ -76,6 +76,9 @@ header {
     align-items: center;
     max-width: 1200px;
     margin: 0 auto;
+    position: sticky;
+    top: 0;
+    z-index: 100;
 }
 
 .logo {
