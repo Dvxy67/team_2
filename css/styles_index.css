@@ -487,7 +487,7 @@ body {
 .footer-contact {
     display: flex;
     justify-content: center;
-    gap: 60px;
+    gap: 150px;
     margin-bottom: 24px;
 }
 
@@ -512,39 +512,6 @@ body {
     font-weight: 400;
     opacity: 1;
     color: #FFFFFF;
-}
-
-/* ===========================
-   MEDIA QUERIES - TABLETTE
-   =========================== */
-@media (min-width: 768px) {
-    .hero-title {
-        font-size: 34px;
-    }
-
-    .hero-subtitle {
-        font-size: 18px;
-    }
-
-    .hero-cta {
-        flex-direction: row;
-    }
-
-    .section-title {
-        font-size: 30px;
-    }
-
-    .confiance-grid {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 30px;
-    }
-
-    .footer-links {
-        flex-direction: row;
-        justify-content: center;
-        gap: 30px;
-    }
 }
 
 /* ===========================

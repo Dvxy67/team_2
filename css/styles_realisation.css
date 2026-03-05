@@ -445,7 +445,7 @@ body {
 .footer-contact {
     display: flex;
     justify-content: center;
-    gap: 60px;
+    gap: 150px;
     margin-bottom: 24px;
 }
 
@@ -471,6 +471,7 @@ body {
     opacity: 1;
     color: #FFFFFF;
 }
+
 
 /* ===========================
    EMERGENCY BUTTON
