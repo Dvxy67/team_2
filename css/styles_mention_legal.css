@@ -12,11 +12,28 @@ body {
     line-height: 1.6;
 }
 
-/* Header / Navbar */
+/* Reset de base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #F4F4F4;
+    color: #000;
+    line-height: 1.6;
+}
+
+/* ===========================
+   HEADER / NAVBAR
+   =========================== */
 header {
     background-color: #257579;
     padding: 20px;
     position: relative;
+    z-index: 100;
 }
 
 .navbar {
@@ -28,8 +45,8 @@ header {
 }
 
 .logo {
-    width: 143px;
-    height: 47px;
+    width: 100px;
+    height: auto;
 }
 
 .logo img {
@@ -38,13 +55,14 @@ header {
 }
 
 .menu-icon {
-    width: 30px;
-    height: 30px;
+    width: 24px;
+    height: 18px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    gap: 5px;
+    justify-content: space-between;
     cursor: pointer;
+    z-index: 1001;
+    position: relative;
 }
 
 .menu-icon span {
@@ -52,6 +70,177 @@ header {
     height: 2px;
     background-color: #F4F4F4;
     border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+.menu-icon:hover span {
+    background-color: #A0C4C2;
+}
+
+/* ===========================
+   MENU BURGER
+   =========================== */
+/* Overlay avec blur */
+.menu-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 998;
+}
+
+.menu-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Menu Burger principal */
+.menu-burger {
+    position: fixed;
+    top: 0;
+    left: -334px;
+    width: 334px;
+    height: 100vh;
+    background-color: #257579;
+    box-shadow: 34px 0px 60px rgba(0, 0, 0, 0.08);
+    border-radius: 0 10px 10px 0;
+    padding: 30px;
+    transition: left 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 999;
+    overflow-y: auto;
+}
+
+.menu-burger.active {
+    left: 0;
+}
+
+/* Bouton fermer (X) */
+.close-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    margin-left: -10px;
+    margin-bottom: 60px;
+    transition: transform 0.3s ease;
+}
+
+.close-btn:hover {
+    transform: scale(1.1);
+}
+
+.close-btn svg {
+    display: block;
+}
+
+/* Navigation du menu */
+.menu-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    margin-top: 100px;
+}
+
+.menu-link {
+    color: #F4F4F4;
+    font-family: 'Roboto', sans-serif;
+    font-size: 32px;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.menu-link:hover {
+    color: #A0C4C2;
+    transform: translateX(5px);
+}
+
+.menu-link.active {
+    color: #A0C4C2;
+}
+
+/* Bloquer le scroll quand menu ouvert */
+body.menu-open {
+    overflow: hidden;
+}
+
+/* ===========================
+   MENU DÉROULANT SERVICES
+   =========================== */
+.services-dropdown {
+    display: flex;
+    flex-direction: column;
+}
+
+.menu-link-services {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    cursor: pointer;
+}
+
+.menu-link-services span {
+    color: #F4F4F4;
+    font-family: 'Roboto', sans-serif;
+    font-size: 32px;
+    font-weight: 700;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+}
+
+.menu-link-services:hover span {
+    color: #A0C4C2;
+    transform: translateX(5px);
+}
+
+.menu-link-services svg {
+    flex-shrink: 0;
+    transition: transform 0.3s ease;
+}
+
+.services-submenu {
+    max-height: 0;
+    overflow: hidden;
+    padding-left: 30px;
+    transition: max-height 0.3s ease;
+}
+
+.services-submenu.open {
+    max-height: 300px;
+    margin-top: 20px;
+}
+
+.submenu-link {
+    display: block;
+    color: #A0C4C2;
+    font-family: 'Roboto', sans-serif;
+    font-size: 24px;
+    font-weight: 400;
+    text-decoration: none;
+    padding: 10px 0;
+    transition: all 0.3s ease;
+}
+
+.submenu-link:hover {
+    color: #F4F4F4;
+    transform: translateX(5px);
+}
+
+#servicesChevron {
+    transition: transform 0.3s ease;
+}
+
+#servicesChevron.rotate {
+    transform: rotate(90deg);
 }
 
 /* Section titre avec fond coloré */
@@ -189,7 +378,7 @@ a:hover {
 /* ===========================
    FOOTER
    =========================== */
-   .main-footer {
+.main-footer {
     background-color: #257579;
     color: #FFFFFF;
     padding: 20px 22px 30px;
@@ -292,7 +481,8 @@ a:hover {
         padding-right: 10px;
     }
 
-    ul li, p {
+    ul li,
+    p {
         font-size: 13px;
         padding-left: 10px;
         padding-right: 10px;
@@ -332,7 +522,8 @@ a:hover {
         padding-right: 5px;
     }
 
-    ul li, p {
+    ul li,
+    p {
         padding-left: 5px;
         padding-right: 5px;
     }
