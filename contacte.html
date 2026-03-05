@@ -15,10 +15,10 @@
 </head>
 
 <body>
+    <!-- HEADER AVEC LOGO ET MENU ICON -->
     <header>
         <nav class="navbar">
             <div class="logo">
-                <!-- Remplace par ton logo SVG ou image -->
                 <img src="/asset/logo.svg" alt="Vandetherm Groupe Logo">
             </div>
             <div class="menu-icon">
@@ -32,22 +32,33 @@
     <!-- Menu Burger Overlay -->
     <div class="menu-overlay" id="menuOverlay"></div>
 
-    <!-- Menu Burger -->
+    <!-- MENU BURGER -->
     <div class="menu-burger" id="menuBurger">
         <button class="close-btn" id="closeBtn" aria-label="Fermer le menu">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
                 <path d="M18 6L6 18M6 6L18 18" stroke="#F4F4F4" stroke-width="1.5" stroke-linecap="round" />
             </svg>
         </button>
+        
         <nav class="menu-nav">
             <a href="index.html" class="menu-link">Accueil</a>
-            <div class="menu-link-services">
-                <a href="services.html" class="menu-link">Services</a>
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                    <path d="M9 6L15 12L9 18" stroke="#F4F4F4" stroke-width="1.5" stroke-linecap="round"
-                        stroke-linejoin="round" />
-                </svg>
+
+            <!-- Services avec sous-menu déroulant -->
+            <div class="services-dropdown">
+                <div class="menu-link-services" onclick="toggleServicesMenu()">
+                    <span class="menu-link">Services</span>
+                    <svg id="servicesChevron" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <path d="M9 6L15 12L9 18" stroke="#F4F4F4" stroke-width="1.5" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                    </svg>
+                </div>
+                <div class="services-submenu" id="servicesSubmenu">
+                    <a href="services.html#plomberie" class="submenu-link">Plomberie</a>
+                    <a href="services.html#electricite" class="submenu-link">Électricité</a>
+                    <a href="services.html#petits-travaux" class="submenu-link">Petits travaux</a>
+                </div>
             </div>
+
             <a href="realisations.html" class="menu-link">Réalisations</a>
             <a href="contact.html" class="menu-link active">Contact</a>
         </nav>
@@ -191,6 +202,15 @@
             menuBurger.classList.remove('active');
             menuOverlay.classList.remove('active');
             body.classList.remove('menu-open');
+        }
+
+        // Fonction pour toggle le sous-menu Services
+        function toggleServicesMenu() {
+            const submenu = document.getElementById('servicesSubmenu');
+            const chevron = document.getElementById('servicesChevron');
+            
+            submenu.classList.toggle('open');
+            chevron.classList.toggle('rotate');
         }
 
         // Event listeners

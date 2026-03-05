@@ -552,3 +552,55 @@ main {
         max-width: 100%;
     }
 }
+
+/* ===========================
+   MENU DÉROULANT SERVICES
+   =========================== */
+   .services-dropdown {
+    display: flex;
+    flex-direction: column;
+}
+
+.menu-link-services span {
+    color: #F4F4F4;
+    font-family: 'Roboto', sans-serif;
+    font-size: 32px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.services-submenu {
+    max-height: 0;
+    overflow: hidden;
+    padding-left: 30px;
+    transition: max-height 0.3s ease;
+}
+
+.services-submenu.open {
+    max-height: 300px;
+    margin-top: 20px;
+}
+
+.submenu-link {
+    display: block;
+    color: #A0C4C2;
+    font-family: 'Roboto', sans-serif;
+    font-size: 24px;
+    font-weight: 400;
+    text-decoration: none;
+    padding: 10px 0;
+    transition: all 0.3s ease;
+}
+
+.submenu-link:hover {
+    color: #F4F4F4;
+    transform: translateX(5px);
+}
+
+#servicesChevron {
+    transition: transform 0.3s ease;
+}
+
+#servicesChevron.rotate {
+    transform: rotate(90deg);
+}
