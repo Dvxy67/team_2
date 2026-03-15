@@ -287,40 +287,7 @@
         display: none;
     }
     
-    /* Navigation horizontale desktop */
-    header {
-        padding: 0;
-    }
-    
-    .navbar {
-        padding: 25px 60px;
-        max-width: 1400px;
-    }
-    
-    .logo {
-        width: 140px;
-    }
-    
-    .desktop-nav {
-        display: flex;
-        gap: 40px;
-        align-items: center;
-    }
-    
-    .desktop-nav a {
-        color: #F4F4F4;
-        text-decoration: none;
-        font-family: 'Roboto', sans-serif;
-        font-size: 16px;
-        font-weight: 500;
-        text-transform: uppercase;
-        transition: color 0.3s ease;
-    }
-    
-    .desktop-nav a:hover {
-        color: #A0C4C2;
-    }
-    */
+
     
     /* ----- HERO SECTION DESKTOP ----- */
     .hero-section {
